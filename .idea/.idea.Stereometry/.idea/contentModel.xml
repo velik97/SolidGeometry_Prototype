@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/Library/Caches/Rider2019.2/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.2/resharper-host/local/Transient/ReSharperHost/v192/SolutionCaches/_Stereometry.1092145373.00" t="ExcludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/extensions" t="IncludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="InputControl" t="Include">
+            <e p="KeyboardInput.cs" t="Include" />
+          </e>
+          <e p="PhaseControl" t="Include">
+            <e p="PhaseController.cs" t="Include" />
+          </e>
+          <e p="UI" t="Include">
+            <e p="Config.cs" t="Include" />
+            <e p="MVVM" t="Include">
+              <e p="View.cs" t="Include" />
+              <e p="ViewModel.cs" t="Include" />
+            </e>
+            <e p="PhaseDescription" t="Include">
+              <e p="PhaseDescriptionScrollView.cs" t="Include" />
+              <e p="PhaseDescriptionScrollVM.cs" t="Include" />
+              <e p="PhaseDescriptionView.cs" t="Include" />
+              <e p="PhaseDescriptionVM.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Util" t="Include">
+            <e p="AsyncTaskManager.cs" t="Include" />
+            <e p="CoroutineHandler" t="Include">
+              <e p="CoroutineHandler.cs" t="Include" />
+              <e p="DisposableEnumerator.cs" t="Include" />
+              <e p="WaiUntil.cs" t="Include" />
+            </e>
+            <e p="DebugUtils" t="Include">
+              <e p="PerformanceWindow.cs" t="Include" />
+            </e>
+            <e p="DisposableContainer.cs" t="Include" />
+            <e p="DisposableContainerMonoBehaviour.cs" t="Include" />
+            <e p="DisposeAction.cs" t="Include" />
+            <e p="EventBusSystem" t="Include">
+              <e p="EventBus.cs" t="Include" />
+              <e p="EventBusHelper.cs" t="Include" />
+              <e p="IGlobalSubscriber.cs" t="Include" />
+            </e>
+            <e p="Extensions.cs" t="Include" />
+            <e p="GlobalInitializationSystem" t="Include">
+              <e p="GlobalInitializer.cs" t="Include" />
+              <e p="GlobalInitializerHelper.cs" t="Include" />
+              <e p="IDestroySceneHandler.cs" t="Include" />
+              <e p="IGlobalInitializable.cs" t="Include" />
+            </e>
+            <e p="MonoSingleton.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Simple Scroll-Snap" t="Include">
+          <e p="Examples" t="Include">
+            <e p="Example 1 (macOS Finder)" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="FileSelected.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Example 3 (Slot Machine)" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="SlotMachine.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Example 4 (Pinned Map)" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="SimpleZoom.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Example 5 (Dynamic Content)" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="DynamicContentController.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Shared Resources" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="ExpandInformation.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="Editor" t="Include">
+              <e p="SimpleScrollSnapEditor.cs" t="Include" />
+            </e>
+            <e p="Runtime" t="Include">
+              <e p="SimpleScrollSnap.cs" t="Include" />
+              <e p="TransitionEffect.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="TextMesh Pro" t="Include">
+          <e p="Fonts" t="Include">
+            <e p="LiberationSans - OFL.txt" t="Include" />
+          </e>
+          <e p="Resources" t="Include">
+            <e p="LineBreaking Following Characters.txt" t="Include" />
+            <e p="LineBreaking Leading Characters.txt" t="Include" />
+            <e p="Shaders" t="Include">
+              <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+              <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+              <e p="TMP_Bitmap.shader" t="Include" />
+              <e p="TMP_SDF Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface.shader" t="Include" />
+              <e p="TMP_SDF.shader" t="Include" />
+              <e p="TMP_Sprite.shader" t="Include" />
+              <e p="TMPro.cginc" t="Include" />
+              <e p="TMPro_Properties.cginc" t="Include" />
+              <e p="TMPro_Surface.cginc" t="Include" />
+            </e>
+          </e>
+          <e p="Sprites" t="Include">
+            <e p="EmojiOne Attribution.txt" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Stereometry.sln" t="IncludeFlat" />
+      <e p="Temp/bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
