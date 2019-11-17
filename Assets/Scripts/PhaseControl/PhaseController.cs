@@ -8,6 +8,7 @@ namespace PhaseControl
     public class PhaseController : MonoSingleton<PhaseController>
     {
         public List<PhaseObject> Phases;
+        public float ScaleFactor = 0.2f;
 
         private int m_CurrentStageIndex = -1;
 
@@ -16,11 +17,42 @@ namespace PhaseControl
 
         private void Awake()
         {
+            SetScale();
+            InitializeStages();
+        }
+
+        private void InitializeStages()
+        {
             foreach (var phase in Phases)
             {
                 phase.Initialize();
             }
             SetNextStage();
+        }
+
+        private void SetScale()
+        {
+            transform.localScale = Vector3.one * ScaleFactor;
+            LineRenderer[] lineRenderers = GetComponentsInChildren<LineRenderer>(true);
+            List<Material> lineRendererMaterials = new List<Material>(); 
+            
+            // Set width of lines
+            foreach (LineRenderer lineRenderer in lineRenderers)
+            {
+                lineRenderer.widthMultiplier *= ScaleFactor;
+                if (!lineRendererMaterials.Contains(lineRenderer.material))
+                {
+                    lineRendererMaterials.Add(lineRenderer.material);
+                }
+            }
+            
+            // Set dashed line periods
+            foreach (Material material in lineRendererMaterials)
+            {
+                Vector2 scale = material.mainTextureScale;
+                scale.x /= ScaleFactor;
+                material.mainTextureScale = scale;
+            }
         }
 
         public void SetStage(int number)
