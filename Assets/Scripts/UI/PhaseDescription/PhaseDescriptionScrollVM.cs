@@ -20,8 +20,12 @@ namespace UI.PhaseDescription
 
             for (var i = 0; i < m_PhaseController.Phases.Count; i++)
             {
-                PhaseDescriptionVMs.Add(new PhaseDescriptionVM(i, m_PhaseController.Phases[i]));
+                PhaseDescriptionVM phaseDescriptionVM = new PhaseDescriptionVM(i, m_PhaseController.Phases[i]);
+                AddDisposable(phaseDescriptionVM);
+                PhaseDescriptionVMs.Add(phaseDescriptionVM);
             }
+            
+            SetStage(0);
         }
 
         public void SetStage(int number)

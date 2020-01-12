@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using UI.ResetPosition;
 using UnityEngine;
 using Util;
+using Util.EventBusSystem;
 
 namespace PhaseControl
 {
-    public class PhaseController : MonoSingleton<PhaseController>
+    public class PhaseController : DisposableContainerMonoBehaviour, IResetPositionHandler
     {
         public List<PhaseObject> Phases;
-        public float ScaleFactor = 0.2f;
 
         private int m_CurrentStageIndex = -1;
 
@@ -17,8 +18,8 @@ namespace PhaseControl
 
         private void Awake()
         {
-            SetScale();
             InitializeStages();
+            AddDisposable(EventBus.Subscribe(this));
         }
 
         private void InitializeStages()
@@ -28,31 +29,6 @@ namespace PhaseControl
                 phase.Initialize();
             }
             SetNextStage();
-        }
-
-        private void SetScale()
-        {
-            transform.localScale = Vector3.one * ScaleFactor;
-            LineRenderer[] lineRenderers = GetComponentsInChildren<LineRenderer>(true);
-            List<Material> lineRendererMaterials = new List<Material>(); 
-            
-            // Set width of lines
-            foreach (LineRenderer lineRenderer in lineRenderers)
-            {
-                lineRenderer.widthMultiplier *= ScaleFactor;
-                if (!lineRendererMaterials.Contains(lineRenderer.material))
-                {
-                    lineRendererMaterials.Add(lineRenderer.material);
-                }
-            }
-            
-            // Set dashed line periods
-            foreach (Material material in lineRendererMaterials)
-            {
-                Vector2 scale = material.mainTextureScale;
-                scale.x /= ScaleFactor;
-                material.mainTextureScale = scale;
-            }
         }
 
         public void SetStage(int number)
@@ -98,6 +74,12 @@ namespace PhaseControl
             Phases[m_CurrentStageIndex].SetActive(false);
             m_CurrentStageIndex--;
 
+        }
+
+        public void HandleResetPosition()
+        {
+            EventBus.TriggerEvent<IPhaseControllerLifeCycleHandler>(h => h.HandlePhaseControllerDestroyed(this));
+            gameObject.SetActive(false);
         }
     }
 

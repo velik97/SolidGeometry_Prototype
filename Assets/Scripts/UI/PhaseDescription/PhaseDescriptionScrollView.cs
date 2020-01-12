@@ -11,9 +11,15 @@ namespace UI.PhaseDescription
         [SerializeField] private SimpleScrollSnap m_Scroll;
         [SerializeField] private PhaseDescriptionView m_DescriptionPrefab;
 
+        private void Awake()
+        {
+            m_Scroll.enabled = false;
+        }
+
         public override void Bind(PhaseDescriptionScrollVM viewModel)
         {
             base.Bind(viewModel);
+            m_Scroll.enabled = true;
 
             foreach (PhaseDescriptionVM descriptionVM in viewModel.PhaseDescriptionVMs)
             {
@@ -34,6 +40,11 @@ namespace UI.PhaseDescription
 
         protected override void DestroyViewImplementation()
         {
+            while (m_Scroll.NumberOfPanels != 0)
+            {
+                m_Scroll.Remove(0);
+            }
+            m_Scroll.enabled = false;
         }
     }
 }

@@ -1,5 +1,9 @@
+using System;
+using System.Linq;
+using System.Reflection;
 using DanielLochner.Assets.SimpleScrollSnap;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Util
 {
@@ -8,6 +12,11 @@ namespace Util
         public static bool IsInMask(this LayerMask mask, GameObject gameObject)
         {
             return (mask & (1 << gameObject.layer)) != 0;
+        }
+
+        public static bool HasAttribute<TAttribute>(this Type type) where TAttribute : Attribute
+        {
+            return type.GetCustomAttribute<TAttribute>() != null;
         }
         
         public static T Add<T>(this SimpleScrollSnap scroll, T panel, int index) where T : MonoBehaviour

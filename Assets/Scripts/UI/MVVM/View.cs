@@ -25,6 +25,7 @@ namespace UI.MVVM
             Unbind();
             ViewModel = viewModel;
             ViewModel.OnDispose += Dispose;
+            m_IsDisposed = false;
         }
 
         private void Unbind()
